@@ -1,6 +1,10 @@
 import React from 'react';
 import './App.css';
 
+// HERE IS THE WEBSITE IM USING FOR THE GRAPH EXAMPLES SUPER HELPFUL
+// https://github.com/jerairrest/react-chartjs-2/blob/master/example/src/components/line.js
+// http://jerairrest.github.io/react-chartjs-2/
+
 import DoughnutGraph from './doughnut';
 import PieGraph from './pie';
 import LineGraph from './line';
