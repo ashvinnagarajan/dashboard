@@ -5,7 +5,6 @@
   "dependencies": {
     "bulma": "^0.7.5",
     "chart.js": "^2.8.0",
-    "firebase": "^6.3.4",
     "react": "^16.8.6",
     "react-chartjs": "^1.2.0",
     "react-chartjs-2": "^2.7.6",
