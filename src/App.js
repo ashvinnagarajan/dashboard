@@ -1,4 +1,5 @@
 import React from 'react';
+import firebase from './firebase.js'
 import './App.css';
 
 // HERE IS THE WEBSITE IM USING FOR THE GRAPH EXAMPLES SUPER HELPFUL
@@ -12,31 +13,71 @@ import DoughnutGraph from './doughnut';
 import PieGraph from './pie';
 import LineGraph from './line';
 
-function App() {
-  return (
-    <div>
-      <Header/>
+class App extends React.Component {
+  constructor(props){
+    super(props);
 
-      <div class="columns" style={{padding: 100}}>
-        <div class="column">
-          <DoughnutGraph />
-          
-          <LineGraph />
+    this.state = {
+      speed: [],
+      gps: [],
+    };
+  }
+
+  componentDidMount() {
+    // let speedRef = firebase.database().ref('speed');
+    let database = firebase.database();
+
+    database.ref('speed').on('value', (snapshot) => {
+      let speedObj = snapshot.val();
+      var speedArr = [];
+      for(let speeds in speedObj){
+        speedArr.push(speedObj[speeds]);
+      }
+      this.setState({
+        speed: speedArr
+      });
+    });
+
+    database.ref('gps').on('value', (snapshot) => {
+      let gpsObj = snapshot.val();
+      var gpsArr = [];
+      for(let gps in gpsObj){
+        gpsArr.push(gpsObj[gps]);
+      }
+      this.setState({
+        gps: gpsArr
+      });
+    });
+  }
+
+  render() {
+    return (
+      <div style={{paddingTop: 100}}>
+        <Header/>
+        <div>
+          {this.state.speed}
+          <br/>
+          {this.state.gps[0]}
         </div>
-        <div class="column">
-          <PieGraph />
-          
-          <PieGraph />
-        </div>
+        {/* <div class="columns">
+          <div class="column">
+            <DoughnutGraph speed={this.state.speed} /> */}
+            
+            <LineGraph />
+          {/* </div>
+          <div class="column">
+            <PieGraph />
+            
+            <PieGraph />
+          </div>
+        </div> */}
+  
+  
+        <Footer />
+  
       </div>
-
-
-      <Footer />
-
-     </div>
-
-    
-  );
+    );
+  }
 }
 
 export default App;

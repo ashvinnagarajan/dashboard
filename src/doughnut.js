@@ -29,35 +29,33 @@ const getState = () => ({
 
 
 class DoughnutGraph extends React.Component {
-	getInitialState() {
-		return getState();
-	}
-
-	componentWillMount() {
-		setInterval(() => {
-			this.setState(getState());
-		}, 5000);
-	}
+  constructor(props) {
+    super(props);
+    this.state = {data: getState()};
+    
+    console.log(this.props.speed);
+  }
 
   render() {
     return (
-    <div class="card" style={{padding: 50}}>
-        <div>
-            <h2>Dynamic DoughnutGraph</h2>
-        </div>
+      <div></div>
+    // <div class="card" style={{padding: 50}}>
+    //     <div>
+    //         <h2>Dynamic DoughnutGraph</h2>
+    //     </div>
 
-        <div class="card-image">
-            <Doughnut data={this.state} />
-        </div>
+    //     <div class="card-image">
+    //         <Doughnut data={this.state.data}/>
+    //     </div>
 
-        <div class="card-content">
-            <div class="content">
-            This is a graph that has some information about the car. 
-            <hr />
-            <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-            </div>
-        </div>
-    </div>
+    //     <div class="card-content">
+    //         <div class="content">
+    //         This is a graph that has some information about the car. 
+    //         <hr />
+    //         <time dateTime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+    //         </div>
+    //     </div>
+    // </div>
 
     );
   }
