@@ -41,10 +41,24 @@ class DoughnutGraph extends React.Component {
 
   render() {
     return (
-      <div>
-        <h2>Dynamicly refreshed Doughnut Example</h2>
-        <Doughnut data={this.state} />
-      </div>
+    <div class="card" style={{padding: 50}}>
+        <div>
+            <h2>Dynamic DoughnutGraph</h2>
+        </div>
+
+        <div class="card-image">
+            <Doughnut data={this.state} />
+        </div>
+
+        <div class="card-content">
+            <div class="content">
+            This is a graph that has some information about the car. 
+            <hr />
+            <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+            </div>
+        </div>
+    </div>
+
     );
   }
 };
