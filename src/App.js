@@ -24,7 +24,6 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    // let speedRef = firebase.database().ref('speed');
     let database = firebase.database();
 
     database.ref('speed').on('value', (snapshot) => {
@@ -57,7 +56,8 @@ class App extends React.Component {
         <div>
           {this.state.speed}
           <br/>
-          {this.state.gps[0]}
+          {this.state.gps[0]} 
+          <br/>
         </div>
         {/* <div class="columns">
           <div class="column">
