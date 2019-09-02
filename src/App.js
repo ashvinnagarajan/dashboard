@@ -35,18 +35,29 @@ class App extends React.Component {
       this.setState({
         speed: speedArr
       });
-    });
+    });  
 
-    database.ref('gps').on('value', (snapshot) => {
-      let gpsObj = snapshot.val();
-      var gpsArr = [];
-      for(let gps in gpsObj){
-        gpsArr.push(gpsObj[gps]);
-      }
-      this.setState({
-        gps: gpsArr
-      });
-    });
+    // database.ref("bruin-racing").on('value', (snapshot) => {
+    //   let dataObj = snapshot.val();
+    //   var speedNum = 0;
+    
+    //   speedNum = dataObj;
+    
+    //   this.setState({
+    //     speed: speedNum
+    //   });
+    // });
+
+    // database.ref('gps').on('value', (snapshot) => {
+    //   let gpsObj = snapshot.val();
+    //   var gpsArr = [];
+    //   for(let gps in gpsObj){
+    //     gpsArr.push(gpsObj[gps]);
+    //   }
+    //   this.setState({
+    //     gps: gpsArr
+    //   });
+    // });
   }
 
   render() {
@@ -56,7 +67,7 @@ class App extends React.Component {
         <div>
           {this.state.speed}
           <br/>
-          {this.state.gps[0]} 
+          {/* {this.state.gps[0]}  */}
           <br/>
         </div>
         {/* <div class="columns">
