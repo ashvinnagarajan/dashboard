@@ -4,35 +4,27 @@ class Header extends React.Component{
 
     render() {
         return (
-            <nav class="navbar is-fixed-top is-primary" role="navigation" aria-label="main navigation">
-            <div class="navbar-brand">
-              <a class="navbar-item" href="https://www.bruinracing.com/smv/">
-                <h1>Bruin Racing</h1>
-              </a>
-          
-              <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
+            <nav className="navbar is-fixed-top is-dark" role="navigation" aria-label="main navigation">
+            <div className="navbar-brand">
+              <a className="navbar-item" href="https://www.bruinracing.com/smv/">
+                <h1>Bruin Racing | Super Mileage Vehicle</h1>
               </a>
             </div>
           
-            <div id="navbarBasicExample" class="navbar-menu">
-              <div class="navbar-start">
-                <a class="navbar-item">
-                  Home
-                </a>
-                <a class="navbar-item">
-                  Graphs
-                </a>
-                </div>
+            <div className="navbar-end">
+              <div className="navbar-item">
+                Made by A. Nagarajan
               </div>
-          
-              <div class="navbar-end">
-                <div class="navbar-item">
-                  Made by A. Nagarajan
-                </div>
+              <div className="navbar-item">
+                Days Until Competition: 244
               </div>
+              <div className="navbar-item">
+                September 3, 2019
+              </div>
+              <div className="navbar-item">
+                9:34pm
+              </div>
+            </div>
             </nav>
         );
     }

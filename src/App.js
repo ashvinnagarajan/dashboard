@@ -7,11 +7,11 @@ import './App.css';
 // http://jerairrest.github.io/react-chartjs-2/
 
 import Header from './header';
-import Footer from './footer';
 
-import DoughnutGraph from './doughnut';
-import PieGraph from './pie';
-import LineGraph from './line';
+import Driver from './driver';
+import Car from './car';
+import Track from './track';
+import Speed from './speed';
 
 class App extends React.Component {
   constructor(props){
@@ -62,30 +62,26 @@ class App extends React.Component {
 
   render() {
     return (
-      <div style={{paddingTop: 100}}>
+      <div className="canvas" style={{paddingTop: '60px'}}>
         <Header/>
-        <div>
-          {this.state.speed}
-          <br/>
-          {/* {this.state.gps[0]}  */}
-          <br/>
-        </div>
-        {/* <div class="columns">
-          <div class="column">
-            <DoughnutGraph speed={this.state.speed} /> */}
-            
-            <LineGraph />
-          {/* </div>
-          <div class="column">
-            <PieGraph />
-            
-            <PieGraph />
+
+        <div className="columns">
+          <div className="column">
+            <div className="columns">
+              <div className="column">
+                <Driver/>
+              </div>
+              <div className="column">
+                <Speed/>
+              </div>
+            </div>
+          
+            <Car/>
           </div>
-        </div> */}
-  
-  
-        <Footer />
-  
+          <div className="column">
+            <Track/>
+          </div>
+        </div>
       </div>
     );
   }
