@@ -62,7 +62,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="canvas" style={{paddingTop: '60px'}}>
+      <div className="canvas" style={{paddingTop: '65px'}}>
         <Header/>
 
         <div className="columns">

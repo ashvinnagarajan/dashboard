@@ -35,6 +35,7 @@
 .car {
   width: 700px;
   margin-left: 20px;
+  margin-bottom: 10px;
 }
 
 .driver {
@@ -69,7 +70,7 @@
   color: gray;
 }
 
-.canvas {
+.canvas{
   /* background-image: radial-gradient(white 5%, gray 35%, white 80%, gray 9%); */
   background-color: hsl(0, 0%, 21%);
 }
@@ -80,4 +81,8 @@
 
 .title {
   color: white;
+}
+
+.column {
+  padding: 9px;
 }
