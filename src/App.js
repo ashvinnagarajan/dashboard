@@ -11,68 +11,61 @@ import Header from './header';
 import Driver from './driver';
 import Car from './car';
 import Track from './track';
-import Speed from './speed';
 
 class App extends React.Component {
   constructor(props){
     super(props);
 
     this.state = {
-      speed: [],
-      gps: [],
+      latestTime: '',
+      latestTrial: '',
+      latestData: {},
     };
   }
 
   componentDidMount() {
     let database = firebase.database();
 
-    database.ref('speed').on('value', (snapshot) => {
-      let speedObj = snapshot.val();
-      var speedArr = [];
-      for(let speeds in speedObj){
-        speedArr.push(speedObj[speeds]);
-      }
-      this.setState({
-        speed: speedArr
+    //sets the time
+    database.ref("Latest Time").on('value', (snapshot) => {
+      var latestTime1 = snapshot.val();
+
+      //sets the trial
+      database.ref("Latest Trial").on('value', (snapshot) => {
+        var latestTrial1 = snapshot.val();
+
+        //sets the data
+        database.ref(latestTrial1).child(latestTime1).on('value', (snapshot) => {
+          var latestData1 = snapshot.val();
+          this.setState({
+            latestData: latestData1
+          })
+        });
+  
+        this.setState({
+          latestTrial: latestTrial1
+        })
       });
-    });  
 
-    // database.ref("bruin-racing").on('value', (snapshot) => {
-    //   let dataObj = snapshot.val();
-    //   var speedNum = 0;
-    
-    //   speedNum = dataObj;
-    
-    //   this.setState({
-    //     speed: speedNum
-    //   });
-    // });
+      this.setState({
+        latestTime: latestTime1
+      })
+    });
 
-    // database.ref('gps').on('value', (snapshot) => {
-    //   let gpsObj = snapshot.val();
-    //   var gpsArr = [];
-    //   for(let gps in gpsObj){
-    //     gpsArr.push(gpsObj[gps]);
-    //   }
-    //   this.setState({
-    //     gps: gpsArr
-    //   });
-    // });
+    
   }
 
   render() {
     return (
-      <div className="canvas" style={{paddingTop: '65px'}}>
+      <div className="canvas color-dark" style={{paddingTop: '55px'}}>
         <Header/>
 
         <div className="columns">
           <div className="column">
             <div className="columns">
               <div className="column">
-                <Driver/>
-              </div>
-              <div className="column">
-                <Speed/>
+
+                <Driver driver={this.state.latestData.driver} />
               </div>
             </div>
           
