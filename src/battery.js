@@ -4,7 +4,7 @@ class Battery extends React.Component{
 
     render() {
         return (
-          <div className="card battery">
+          <div className="battery">
                <div className="card-content">
                     <p className="title is-5">Battery</p>
                     <p className="subtitle is-6">12 V | 36 A</p>
