@@ -34,8 +34,8 @@ class LineGraph extends React.Component{
     return (
       
       <div>
-        <div class="card">
-          <div class="card-image">
+        <div className="card">
+          <div className="card-image">
             <Line data={data} />
           </div>
         </div>

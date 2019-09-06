@@ -13,18 +13,16 @@ class Track extends React.Component{
                <div className="columns">
                     <div className="column">
                          <div className="card-content">
-                         <p className="title is-4">Sonoma Raceway</p>
-                         <p className="subtitle is-6">Trial Number 1</p>
+                              <p className="title is-4">Sonoma Raceway</p>
+                              <p className="subtitle is-6">Trial Number 1</p>
                          </div>
-
-                         <Lap/>
+                         <GPS/>
                     </div>
                     <div className="column">
                          <Weather/>
-                         <GPS/>
                     </div>
                </div>
-               
+               <Lap/>
                <div className="card-image">
                     <Line/>
                </div>
