@@ -6,86 +6,102 @@ import './App.css';
 // https://github.com/jerairrest/react-chartjs-2/blob/master/example/src/components/line.js
 // http://jerairrest.github.io/react-chartjs-2/
 
-import Header from './header';
-import Footer from './footer';
+import Header from './components/header';
 
-import DoughnutGraph from './doughnut';
-import PieGraph from './pie';
-import LineGraph from './line';
+import Driver from './components/driver';
+import Car from './components/car';
+import Track from './components/track';
 
 class App extends React.Component {
   constructor(props){
     super(props);
 
     this.state = {
-      speed: [],
-      gps: [],
+      latestTime: '',
+      latestTrial: '',
+      latestData: {},
+      battery: {},
+      driver: {},            
+      gps: {},
+      joulemeter: {},
+      lap: {},
+      motor: {},
+      speed: {},
+      track: {},
+      weather: {},
     };
   }
 
   componentDidMount() {
     let database = firebase.database();
 
-    database.ref('speed').on('value', (snapshot) => {
-      let speedObj = snapshot.val();
-      var speedArr = [];
-      for(let speeds in speedObj){
-        speedArr.push(speedObj[speeds]);
-      }
-      this.setState({
-        speed: speedArr
+    //sets the time
+    database.ref("Latest Time").on('value', (snapshot) => {
+      var latestTime1 = snapshot.val();
+
+      //sets the trial
+      database.ref("Latest Trial").on('value', (snapshot) => {
+        var latestTrial1 = snapshot.val();
+
+        //sets the data
+        database.ref(latestTrial1).child(latestTime1).on('value', (snapshot) => {
+          var latestData1 = {};
+          latestData1 = snapshot.val();
+          var battery = latestData1["battery"]
+          var driver = latestData1["driver"]
+          var gps = latestData1["gps"]
+          var joulemeter = latestData1["joulemeter"]
+          var lap = latestData1["lap"]
+          var motor = latestData1["motor"]
+          var speed = latestData1["speed"]
+          var track = latestData1["track"]
+          var weather = latestData1["weather"]
+
+          this.setState({
+            latestData: latestData1,
+            battery: battery,
+            driver: driver,
+            gps: gps,
+            joulemeter: joulemeter,
+            lap: lap,
+            motor: motor,
+            speed: speed,
+            track: track,
+            weather: weather,
+          })
+        });
+  
+        this.setState({
+          latestTrial: latestTrial1
+        })
       });
-    });  
 
-    // database.ref("bruin-racing").on('value', (snapshot) => {
-    //   let dataObj = snapshot.val();
-    //   var speedNum = 0;
-    
-    //   speedNum = dataObj;
-    
-    //   this.setState({
-    //     speed: speedNum
-    //   });
-    // });
-
-    // database.ref('gps').on('value', (snapshot) => {
-    //   let gpsObj = snapshot.val();
-    //   var gpsArr = [];
-    //   for(let gps in gpsObj){
-    //     gpsArr.push(gpsObj[gps]);
-    //   }
-    //   this.setState({
-    //     gps: gpsArr
-    //   });
-    // });
+      this.setState({
+        latestTime: latestTime1
+      })
+    });
   }
 
   render() {
     return (
-      <div style={{paddingTop: 100}}>
+      <div className="canvas color-dark" style={{paddingTop: '55px'}}>
         <Header/>
-        <div>
-          {this.state.speed}
-          <br/>
-          {/* {this.state.gps[0]}  */}
-          <br/>
-        </div>
-        {/* <div class="columns">
-          <div class="column">
-            <DoughnutGraph speed={this.state.speed} /> */}
-            
-            <LineGraph />
-          {/* </div>
-          <div class="column">
-            <PieGraph />
-            
-            <PieGraph />
+
+        <div className="columns">
+          <div className="column">
+            <div className="columns">
+              <div className="column">
+
+                <Driver driver={this.state.driver} />
+              </div>
+            </div>
+          
+            <Car battery={this.state.battery} motor={this.state.motor} joulemeter={this.state.joulemeter} speed={this.state.speed} />
           </div>
-        </div> */}
-  
-  
-        <Footer />
-  
+          <div className="column">
+            <Track gps={this.state.gps} weather={this.state.weather} lap={this.state.lap} track={this.state.track} />
+          </div>
+        </div>
       </div>
     );
   }

@@ -33,24 +33,13 @@ class LineGraph extends React.Component{
   render() {
     return (
       
-      <div></div>
-      // <div class="card" style={{padding: 50}}>
-      //   <div>
-      //     <h2>Line Example</h2>
-      //   </div>
-
-      //   <div class="card-image">
-      //     <Line data={data} />
-      //   </div>
-
-      //   <div class="card-content">
-      //       <div class="content">
-      //       This is a graph that has some information about the car. 
-      //       <hr />
-      //       <time dateTime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-      //       </div>
-      //   </div>
-      // </div>
+      <div>
+        <div className="card">
+          <div className="card-image">
+            <Line data={data} />
+          </div>
+        </div>
+      </div>
     );
   }
 };

@@ -31,3 +31,84 @@
     transform: rotate(360deg);
   }
 }
+
+.car {
+  width: 700px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+.car-image {
+  height: 170px;
+}
+
+.driver {
+  margin: 5px 5px 0px 20px !important;
+}
+
+.speed {
+  margin-right: 20px;
+
+}
+
+.speed, .title.is-6 {
+  margin-bottom: 24px;
+}
+
+.GPS {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+
+.weather {
+  padding-top: 36px;
+}
+
+.motor, .battery, .joulemeter{
+  width: 300px;
+  margin-left: 20px;
+  margin-top: -10px !important;
+}
+
+.track {
+  margin-right: 20px;
+  margin-top: 12px;
+}
+
+.card-content {
+  padding: 18px;
+}
+
+.subtitle.is-6 {
+  margin-top: 0px;
+  margin-bottom: 4px;
+  color: gray;
+}
+
+.canvas{
+  background-image: radial-gradient(black, #30343A);
+  /* background-color: hsl(0, 0%, 21%); */
+  /* background-color: #30343A; */
+}
+
+.color-dark {
+  background-color: transparent !important;
+}
+
+.card {
+  background-color: transparent;
+  box-shadow: 0 5px 10px #282c34, 0 0 0 1px #282c34;
+}
+
+.title {
+  color: white;
+}
+
+.column {
+  padding: 9px;
+}
+
+body {
+  height: 100%;
+  overflow: hidden;
+}
