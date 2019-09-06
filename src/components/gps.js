@@ -6,8 +6,8 @@ class Weather extends React.Component{
         return (
           <div className="GPS">
                <div className="card-content GPS">
-                    <p className="subtitle is-6">Latitude: 45.1231</p>
-                    <p className="subtitle is-6">Longitude: 10.1223</p>
+                    <p className="subtitle is-6">Latitude: {this.props.gps.lat}</p>
+                    <p className="subtitle is-6">Longitude: {this.props.gps.long}</p>
                </div>
           </div>
         );

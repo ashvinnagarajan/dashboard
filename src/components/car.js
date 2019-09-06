@@ -12,12 +12,12 @@ class Car extends React.Component{
           <div className="card car">
                <div className="columns">
                     <div className="column">
-                         <Battery/>
-                         <Motor/>
-                         <Joulemeter/>
+                         <Battery battery={this.props.battery} />
+                         <Motor motor={this.props.motor}/>
+                         <Joulemeter joulemeter={this.props.joulemeter} />
                     </div>
                     <div className="column">
-                         <Speed/>
+                         <Speed speed={this.props.speed} />
                     </div>
                </div>
           </div>
