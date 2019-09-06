@@ -3,6 +3,7 @@ import React from 'react';
 import Motor from './motor';
 import Battery from './battery';
 import Joulemeter from './joulemeter';
+import Speed from './speed';
 
 class Car extends React.Component{
 
@@ -16,7 +17,7 @@ class Car extends React.Component{
                          <Joulemeter/>
                     </div>
                     <div className="column">
-                         <img src="https://bulma.io/images/placeholders/96x96.png" alt=""/>
+                         <Speed/>
                     </div>
                </div>
           </div>
