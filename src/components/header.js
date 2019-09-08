@@ -46,7 +46,7 @@ class Header extends React.Component{
               </a>
             </div>
           
-            <div className="navbar-end">
+            <div className="navbar-end is-hidden-touch">
               <div className="navbar-item">
                 Made by A. Nagarajan
               </div>

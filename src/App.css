@@ -32,27 +32,8 @@
   }
 }
 
-.car {
-  width: 700px;
-  margin-left: 20px;
-  margin-bottom: 10px;
-}
-
 .car-image {
   height: 170px;
-}
-
-.driver {
-  margin: 5px 5px 0px 20px !important;
-}
-
-.speed {
-  margin-right: 20px;
-
-}
-
-.speed, .title.is-6 {
-  margin-bottom: 24px;
 }
 
 .GPS {
@@ -64,15 +45,8 @@
   padding-top: 36px;
 }
 
-.motor, .battery, .joulemeter{
-  width: 300px;
-  margin-left: 20px;
-  margin-top: -10px !important;
-}
-
-.track {
-  margin-right: 20px;
-  margin-top: 12px;
+.driver {
+  margin-bottom: 14px;
 }
 
 .card-content {
@@ -104,11 +78,22 @@
   color: white;
 }
 
-.column {
-  padding: 9px;
+body {
+  height: 110%;
+  overflow: hidden;
+  overflow-y: hidden;
+  background-color: black; 
 }
 
-body {
-  height: 100%;
-  overflow: hidden;
+html {
+  background: #282c34;
+}
+
+.column {
+  overflow-y: hidden;
+  padding-bottom: 6px;
+}
+
+.chartjs-render-monitor {
+  max-height: 300px;
 }

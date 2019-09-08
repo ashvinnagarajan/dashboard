@@ -84,22 +84,17 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="canvas color-dark" style={{paddingTop: '55px'}}>
+      <div className="canvas color-dark" style={{paddingTop: '45px'}}>
         <Header/>
 
         <div className="columns">
-          <div className="column">
-            <div className="columns">
-              <div className="column">
-
-                <Driver driver={this.state.driver} />
-              </div>
-            </div>
-          
+          <div className="column">  
+            <Driver driver={this.state.driver} />          
             <Car battery={this.state.battery} motor={this.state.motor} joulemeter={this.state.joulemeter} speed={this.state.speed} />
-          </div>
+           </div>
           <div className="column">
             <Track gps={this.state.gps} weather={this.state.weather} lap={this.state.lap} track={this.state.track} />
+          
           </div>
         </div>
       </div>
