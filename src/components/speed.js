@@ -6,11 +6,12 @@ class Speed extends React.Component{
         return (
           <div className="speed">
                <div className="card-content">
-                    <p className="title is-2">{this.props.speed.speed} mph</p>
+                    <p className="title is-2">Speed: {this.props.speed.speed} m/s</p>
                     
-                    <p className="title speed-title is-6">Throttle: {this.props.speed.throttle}%</p>
-                    <p className="title speed-title is-6">{this.props.speed.acceleration} m/s<sup>2</sup></p>
-                    <p className="title speed-title is-6 is-spaced">Brake: {this.props.speed.brake}%</p>
+                    <p className="title speed-title is-6 is-spaced">RPM: {this.props.speed.rpm} rpm</p>
+                    <p className="subtitle speed-title is-6 is-spaced">Throttle: {this.props.speed.throttle}%</p>
+                    <p className="subtitle speed-title is-6 is-spaced">{this.props.speed.acceleration} m/s<sup>2</sup></p>
+                    
                     
                     <p className="subtitle is-6">Avg Speed: {this.props.speed.avg} mph</p>
                     <p className="subtitle is-6"></p>

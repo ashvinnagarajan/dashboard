@@ -8,7 +8,7 @@ class Lap extends React.Component{
                <div className="columns">
                     <div className="column">
                          <div className="card-content">
-                              <p className="subtitle is-6">Lap: {this.props.lap["number"]}</p>
+                              <p className="title is-6">Lap: {this.props.lap["number"]}</p>
                               <p className="subtitle is-6">Current Lap: {this.props.lap["current"]}</p>
                               <p className="subtitle is-6">Total: {this.props.lap["total"]}</p>
                          </div>
