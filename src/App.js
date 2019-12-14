@@ -36,7 +36,7 @@ class App extends React.Component {
     let database = firebase.database();
 
     //sets the time
-    database.ref("Latest Time").on('value', (snapshot) => {
+    database.ref("Previous Time").on('value', (snapshot) => {
       var latestTime1 = snapshot.val();
 
       //sets the trial
