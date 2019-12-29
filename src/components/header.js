@@ -22,11 +22,8 @@ class Header extends React.Component{
     };
     var time1 = hours + ":" + today.getMinutes() + ":" + today.getSeconds() + endString;
 
-    var cmas= new Date(2020, 3, 6);
-    if (today.getMonth()===11 && today.getDate()>25) 
-    {
-      cmas.setFullYear(cmas.getFullYear()); 
-    }  
+    var cmas= new Date(2020, 3, 1);
+     
     var one_day=1000*60*60*24;
     console.log(cmas)
     console.log(today)
