@@ -25,9 +25,11 @@ class Header extends React.Component{
     var cmas= new Date(2020, 3, 6);
     if (today.getMonth()===11 && today.getDate()>25) 
     {
-      cmas.setFullYear(cmas.getFullYear()+1); 
+      cmas.setFullYear(cmas.getFullYear()); 
     }  
     var one_day=1000*60*60*24;
+    console.log(cmas)
+    console.log(today)
     var daysLeft1 = "Days to Competition: " + (Math.ceil( (cmas.getTime()-today.getTime() )/ one_day ));
     
     this.setState({
