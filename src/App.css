@@ -97,3 +97,7 @@ html {
 .chartjs-render-monitor {
   max-height: 300px;
 }
+
+.control-button {
+  width: 70px;
+}
