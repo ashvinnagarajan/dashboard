@@ -1,4 +1,4 @@
-import apiKeyHidden from './config';
+import {apiKeyHidden} from './config';
 import firebase from 'firebase';
 
 // Set the configuration for your app
