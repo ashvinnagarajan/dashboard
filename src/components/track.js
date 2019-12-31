@@ -1,9 +1,9 @@
 import React from 'react';
 
-import Line from '../notused/line';
 import Weather from './weather';
 import Lap from './lap';
 import GPS from './gps';
+import Controls from './controls';
 
 class Track extends React.Component{
 
@@ -24,7 +24,7 @@ class Track extends React.Component{
                </div>
                <Lap lap={this.props.lap}/>
                <div className="card-image">
-                    <Line/>
+                    <Controls/>
                </div>
           </div>
         );
